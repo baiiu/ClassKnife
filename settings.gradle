@@ -1,2 +1,4 @@
-include ':sample', ':annotations', ':libaspect', ':sampling'
-include ':buildSrc', ':plugin'
+//include ':buildSrc', ':plugin'
+
+include ':sample', ':libaspect', ':sampling'
+include ':annotations', ':plugin'

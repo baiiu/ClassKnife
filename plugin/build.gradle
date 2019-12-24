@@ -2,13 +2,11 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 
 repositories {
-    maven { url 'file:/Users/yuqiang/workspace/project/ClassKnife/repo/' }
     google()
     jcenter()
     mavenCentral()
     maven { url "https://jitpack.io" }
-    maven { url 'file:/' + rootDir+ '/repo' }
-
+    maven { url uri('../repo') }
 }
 
 sourceSets {
@@ -39,8 +37,6 @@ dependencies {
     compile 'com.yuqiang.aop:aop-annonations:' + rootProject.aop_annonations
     implementation 'com.google.code.gson:gson:2.8.5'
 }
-
-
 
 compileGroovy {
     sourceCompatibility = 1.7

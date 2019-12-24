@@ -1,7 +1,10 @@
 apply plugin: 'com.android.application'
+apply plugin: 'class-knife'
+
 //apply plugin: 'kotlin-android'
 //apply plugin: 'kotlin-android-extensions'
 //apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -44,8 +47,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation 'com.yuqiang.aop:aop-annonations:' + rootProject.aop_annonations
-    implementation 'com.yuqiang.aop:aop-samping:' + rootProject.aop_samping
+
     api project(':libaspect')
+    api project(':sampling')
 }
 
-apply plugin: 'class-knife'

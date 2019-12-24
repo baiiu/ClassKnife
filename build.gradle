@@ -5,7 +5,7 @@ buildscript {
     repositories {
         jcenter()
         google()
-        maven { url 'file:/' + rootDir + '/repo' }
+        maven { url file(rootDir.absolutePath + '/repo') }
         maven { url "https://jitpack.io" }
     }
     dependencies {
@@ -15,6 +15,9 @@ buildscript {
         // in the individual module build.gradle files
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
+        classpath 'com.yuqiang.aop:aop-annonations:0.0.1-SNAPSHOT'
+        classpath 'com.yuqiang.aop:class-knife:0.0.1-SNAPSHOT'
     }
 }
 
@@ -22,9 +25,14 @@ allprojects {
     repositories {
         jcenter()
         google()
-        maven { url 'file:/' + rootDir + '/repo' }
+        maven { url file(rootDir.absolutePath + '/repo') }
         maven { url "https://jitpack.io" }
     }
+}
+
+task hello << {
+    println 'task hello1'
+    println rootDir.absolutePath + "/repo"
 }
 
 ext {

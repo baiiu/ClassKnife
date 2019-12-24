@@ -54,7 +54,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.fab).setOnClickListener(this);
         funCall();
         testStaticFunAround(this, 2);
-        testReplaceForCommit();
+        //testReplaceForCommit();
         start();
     }
 
