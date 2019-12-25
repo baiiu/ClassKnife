@@ -45,7 +45,11 @@ public class Node {
                 currentNode = node;
             } else {
                 currentNode.timeConsuming = data.timeStamp - currentNode.timeConsuming;
-                currentNode.label = data.timeStamp + " <after:before> " + currentNode.timeConsuming + "....dx....." + currentNode.timeConsuming;
+                currentNode.label = data.timeStamp
+                        + " <after:before> "
+                        + currentNode.timeConsuming
+                        + "....dx....."
+                        + currentNode.timeConsuming;
                 currentNode = currentNode.parent;
             }
         }

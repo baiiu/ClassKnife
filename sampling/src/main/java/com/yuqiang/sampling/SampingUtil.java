@@ -1,5 +1,6 @@
 package com.yuqiang.sampling;
 
+import android.text.TextUtils;
 import com.yuqiang.aop.annotations.Ignore;
 
 import java.io.PrintWriter;
@@ -39,6 +40,9 @@ public class SampingUtil {
     }
 
     public static List<TimingData> queryByName(String name) {
+        if (TextUtils.isEmpty(name)) {
+            return timingDataList;
+        }
         if (MAP.containsKey(name + ".in") && MAP.containsKey(name + ".out")) {
             Integer start = SampingUtil.MAP.get(name + ".in");
             Integer end = SampingUtil.MAP.get(name + ".out");

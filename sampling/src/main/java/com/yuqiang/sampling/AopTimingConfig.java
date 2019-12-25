@@ -15,11 +15,13 @@ public class AopTimingConfig {
 
     @Timing(target = {"com.yuqiang.*.*(*)*"}, enter = true)
     public static void timingBefore(String desc) {
+        android.util.Log.e("mLogU", "timingBefore: " + desc);
         SampingUtil.i(desc);
     }
 
     @Timing(target = {"com.yuqiang.*.*(*)*"}, enter = false)
     public static void timingAfter(String desc) {
+        android.util.Log.e("mLogU", "timingAfter: " + desc);
         SampingUtil.o(desc);
     }
 }

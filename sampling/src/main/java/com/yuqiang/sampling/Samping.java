@@ -30,28 +30,34 @@ public class Samping extends ContentProvider {
     }
 
     @Override
-    public String getType( Uri uri) {
+    public String getType(Uri uri) {
         return null;
     }
 
     @Override
-    public Uri insert( Uri uri,  ContentValues values) {
+    public Uri insert(Uri uri, ContentValues values) {
         return null;
     }
 
     @Override
-    public int delete( Uri uri,  String selection,  String[] selectionArgs) {
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
         return 0;
     }
 
     @Override
-    public int update( Uri uri,  ContentValues values,  String selection,  String[] selectionArgs) {
+    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
         return 0;
     }
 
+    // @formatter:off
     @Override
     public void dump(FileDescriptor fd, PrintWriter writer, String[] args) {
-        StringBuffer stringBuffer = new StringBuffer();
+        if(args == null || args.length == 0){
+            SampingUtil.getStack(null, writer);
+            return;
+        }
+
+        StringBuilder stringBuffer = new StringBuilder();
         for (int i = 1; i < args.length; i++) {
             stringBuffer.append(args[i]).append(".");
         }
