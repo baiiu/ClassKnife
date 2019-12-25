@@ -34,8 +34,10 @@ dependencies {
     compile 'org.ow2.asm:asm-commons:5.1'
     implementation 'commons-io:commons-io:2.5'
     compile 'com.android.tools.build:gradle:2.1.0'
-    compile 'com.yuqiang.aop:aop-annonations:' + rootProject.aop_annonations
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    //    compile 'com.yuqiang.aop:aop-annonations:' + rootProject.aop_annonations
+    implementation project(":annotations")
 }
 
 compileGroovy {
