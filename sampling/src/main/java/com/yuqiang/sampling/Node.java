@@ -55,7 +55,7 @@ public class Node {
         }
 
 
-        traverse(root.childs.get(0), writer);
+        traverse(root, writer);
     }
 
     private static void traverse(Node root, PrintWriter writer) {
